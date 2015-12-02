@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="datepickerDemo">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-datepick | A datepicker written in angular</title>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/app.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-controller="masterController">
+	<header>
+		<h1>ngDatepick <br><small>An elegant, easily customizable datepicker in Angular <br>Built on top of <a href="https://github.com/fulup-bzh/DatePicker" target="_blank">Datepicker by Fulup</a></small></h1>
+	</header>
+	<div class="datepicker-container">
+		<date-picker ng-model="datepicker" placeholder="Select Date" callback="dateChange()" format="dd MMM, yyyy" autohide="true"></date-picker>
+	</div>
+	<div class="selected-date" ng-class="datepicker ? 'vis' : 'hidden'">
+		<h3>Current Value</h3>
+		{{datepicker}}
+	</div>
+	<footer>
+		<a href="https://github.com/FauzanKhan/ng-datepick" target="_blank">
+			<!-- <i class="material-icons">github</i> <--><img src="http://cdn.flaticon.com/png/256/25231.png" alt=""></--> Fork on GitHub
+		</a>
+	</footer>
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
+	<script src="js/datepicker.js"></script>
+	<script src="js/demo.js"></script>
+</body>
+</html>
