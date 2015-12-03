@@ -130,7 +130,7 @@ function fznDatePicker ($log, $document, $filter) {
     };
 
     function link (scope, element, attrs, model) {
-
+        
         var bodyListenerLogic = function(e){
             var clickedElement = e.target;
             var insideDatepicker = false;

@@ -1,0 +1,38 @@
+{
+  "name": "fzn-angular-datepicker",
+  "version": "0.0.1",
+  "homepage": "https://github.com/FauzanKhan/angular-datepicker",
+  "authors": [
+    "FauzanKhan <fauzankhan93@gmail.com>"
+  ],
+  "description": "An elegant, easily customizable dropdown in Angular",
+  "main": "['js/datepicker.js', 'scss/datepicker.scss']",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "datepicker",
+    "angular",
+    "angular-datepicker",
+    "ng-datepicker",
+    "fzn-angular-datepicker"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "package.json",
+    "gulpfile.js",
+    "index.html",
+    "scss/demo.scss",
+    "css/*",
+    "js/demo.js"
+  ],
+  "dependencies" : {
+     "jquery": ">=1.11.3",
+     "angular": ">=1.1.0"
+  }
+}
