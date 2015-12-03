@@ -161,9 +161,11 @@
     display: none; }
 
 body {
-  background: #FCFCFC;
+  background: #F5F5F5;
   font-family: "Source Sans Pro", arial;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  min-height: 700px;
+  min-height: 100vh; }
   body header {
     text-align: center;
     color: #444;
