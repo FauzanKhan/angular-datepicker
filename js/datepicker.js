@@ -131,6 +131,29 @@ function fznDatePicker ($log, $document, $filter) {
 
     function link (scope, element, attrs, model) {
 
+        var bodyListenerLogic = function(e){
+            var clickedElement = e.target;
+            var insideDatepicker = false;
+            do {
+                if(clickedElement != document && (clickedElement.classList && (clickedElement.classList.contains('showPicker') || clickedElement.classList.contains('fzn-date-picker')))) {
+                    insideDatepicker = true;
+                    break;
+                }
+            } while ((clickedElement = clickedElement.parentNode));
+            if(!insideDatepicker) {
+                scope.hide(true);
+                unregisterBodyListener();
+            }
+        }
+
+        var registerBodyListener = function(){
+            document.body.addEventListener('click', bodyListenerLogic)
+        };
+
+        var unregisterBodyListener = function(){
+            document.body.removeEventListener('click', bodyListenerLogic)
+        }
+
         // update external representation when internal value change
         model.$formatters.unshift(function (date) {
 
@@ -574,6 +597,7 @@ function fznDatePicker ($log, $document, $filter) {
             scope.place();
             scope.viewMode = 0;
             scope.showPicker = true;
+            registerBodyListener();
             $document.on('keydown',scope.keydown);
 
             if (apply) scope.$apply();
