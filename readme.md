@@ -13,9 +13,10 @@ An elegant, easily customizable datepicker in Angular built on top of [Datepicke
 * Google material Icons
 
 ### Installation
-Use the following cpmmand to install the bower pakage for the datpicker: 
+* Use the following cpmmand to install the bower pakage for the datpicker: 
 ```bower install fzn-angular-datepicker```
-Copy datepicker.js and datepicker.scss from the repository and use it the way you like.
+
+* Or Copy datepicker.js and datepicker.scss from the repository and use it the way you like.
 
 ### Usage
 * Make sure you include the '''datepicker''' module in you angular app: 
