@@ -12,6 +12,11 @@ An elegant, easily customizable datepicker in Angular built on top of [Datepicke
 * jQuery
 * Google material Icons
 
+### Installation
+Use the following cpmmand to install the bower pakage for the datpicker: 
+```bower install fzn-angular-datepicker```
+Copy datepicker.js and datepicker.scss from the repository and use it the way you like.
+
 ### Usage
 * Make sure you include the '''datepicker''' module in you angular app: 
 
@@ -22,19 +27,19 @@ angular.module('myApp', ['date-picker']);
 
 * once you've added the module in your app. Use the code below to get the datepicker up and running:
 
-```
+```html
 <date-picker
       id="my-picker-name"                     // only use as an argument to callback
       class="my-custom-class"                 // default class is bzm-date-picker
       placeholder="Track Date Selection"      // place holder for date readonly input zone
 
-      <!-- Angular Scope Variables -->
+      // Angular Scope Variables
       callback="myCallBack"                    // $scope.myCallBack(selectedDate) is called when ever a new date is selected
       ng-model="viewDate"                      // $scope.viewDate angular scope for selected date
-      not-after="myEndDate"                    // $scope.myEndDate   => JS Date OBJECT
-      not-before="myStartDate"                 // $scope.myStartDate => idem
+      not-after="myEndDate"                    // $scope.myEndDate   = JS Date OBJECT
+      not-before="myStartDate"                 // $scope.myStartDate = idem
 
-      <!-- Angular Directive Attributes -->
+      // Angular Directive Attributes
       format="dd-MM-yy"                        // angular date filter https://docs.angularjs.org/api/ng/filter/date
       language="en"                            // English, French, German, ...
       weekstart="1"                            // Week start [1==Monday]
@@ -48,7 +53,7 @@ angular.module('myApp', ['date-picker']);
 ###Customization
 You can easily customize the look and feel of the datepicker by changing the following variables in the datepicker.scss file as per your requirement:
 
-``` 
+```css
 $primary-font:  arial; // the font you want to use
 $primary-color: #008CCD; // the highlighting colot
 $text-color: #434A54; // color of the text in datepicker
