@@ -434,10 +434,10 @@ function fznDatePicker ($log, $document, $filter) {
 
         // Place picker on the screen [need to be fixes to handle exceptions]
         scope.place = function(){
-
+            debugger;
             scope.picker.css({
-                top:    element.find('.date-input')[0].offsetTop + element.find('.date-input').outerHeight(),
-                left:   element[0].offsetLeft,
+                top:    element.children('.date-display')[0].offsetTop + element.children('.date-display')[0].clientHeight + 'px',
+                left:   element[0].offsetLeft + 'px',
                 zIndex: 100,
                 display: "block"
             });
@@ -523,7 +523,7 @@ function fznDatePicker ($log, $document, $filter) {
                         if(monthOnly && !closestElemNg.hasClass('disabled') && closestElemNg.hasClass('month')){
                             scope.showMode(-1);
                             scope.fill();
-                            var temp = angular.element('.datepicker-days').find('table tbody td.day.picker').not('.old').not('.new').first()[0];
+                            var temp = document.querySelector('.datepicker-days td.day.picker:not(.old)');
                             scope.onclick(temp);
                             scope.hide(true);
                         }
@@ -630,6 +630,7 @@ function fznDatePicker ($log, $document, $filter) {
 
         // input field was selected
         scope.displayPicker = function (elem) {
+            debugger;
           if (!scope.picker) {
               return;
           }

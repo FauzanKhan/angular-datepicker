@@ -9,7 +9,6 @@ An elegant, easily customizable datepicker in Angular built on top of [Datepicke
 
 ### Dependecies
 * Angular.js
-* jQuery
 * Google material Icons
 
 ### Installation
@@ -64,5 +63,9 @@ $hover-color: #F8F8F8;
 $white: #FFF;
 $black: #333;
 ```
+
+
+###Demo
+visit <a href="http://fauzankhan.github.io/angular-datepicker/">http://fauzankhan.github.io/angular-datepicker/</a> to see the datepicker in action
 
 
