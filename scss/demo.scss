@@ -2,15 +2,15 @@ body{
 	background: #F5F5F5;
 	font-family: "Source Sans Pro", arial;
 	overflow-y: hidden;
-	min-height: 700px;
 	min-height: 100vh;
 	header{
 		text-align: center;
 		color: #444;
-		padding-top: 0px;
+		padding-top: 10px;
 		font-size: 20px;
 		h1{
 			margin-top: 8px;
+			line-height: 45px;
 		}
 		small{
 			color: #999;
@@ -32,12 +32,27 @@ body{
 	}
 	.datepicker-container{
 		margin: 0 auto;
-		width: 294px;
+		text-align: center;
 		input{
 			height: 32px;
 			border-radius: 3px;
 			border: 1px solid #EAEAEA;
 			padding: 0px 10px;
+		}
+		.datepicker-1, .datepicker-2{
+			width: 294px;
+			display: inline-block;
+			text-align: left;
+			padding: 0 90px;
+			min-height: 300px;
+			label{
+				color: #999;
+				font-weight: 600;
+				font-family: "Source Sans Pro";
+			}
+		}
+		.datepicker-1{
+			border-right: 1px dotted #BCBCBC;
 		}
 	}
 	.selected-date{
@@ -48,7 +63,6 @@ body{
 		background: #FFF;
 		position: fixed;
 		bottom: 50px;
-		right: 50px;
 		border-radius: 0px;
 		font-size: 14px;
 		color: #999;
@@ -58,6 +72,12 @@ body{
 		}
 		&.hidden{
 			opacity: 0;
+		}
+		&.datepicker-1-value{
+			left: 50px;
+		}
+		&.datepicker-2-value{
+			right: 50px;
 		}
 		h3{
 			color: #999;

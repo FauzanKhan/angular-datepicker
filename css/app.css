@@ -164,15 +164,15 @@ body {
   background: #F5F5F5;
   font-family: "Source Sans Pro", arial;
   overflow-y: hidden;
-  min-height: 700px;
   min-height: 100vh; }
   body header {
     text-align: center;
     color: #444;
-    padding-top: 0px;
+    padding-top: 10px;
     font-size: 20px; }
     body header h1 {
-      margin-top: 8px; }
+      margin-top: 8px;
+      line-height: 45px; }
     body header small {
       color: #999;
       font-size: 25px;
@@ -189,12 +189,24 @@ body {
           border-bottom: 1px dotted #666; }
   body .datepicker-container {
     margin: 0 auto;
-    width: 294px; }
+    text-align: center; }
     body .datepicker-container input {
       height: 32px;
       border-radius: 3px;
       border: 1px solid #EAEAEA;
       padding: 0px 10px; }
+    body .datepicker-container .datepicker-1, body .datepicker-container .datepicker-2 {
+      width: 294px;
+      display: inline-block;
+      text-align: left;
+      padding: 0 90px;
+      min-height: 300px; }
+      body .datepicker-container .datepicker-1 label, body .datepicker-container .datepicker-2 label {
+        color: #999;
+        font-weight: 600;
+        font-family: "Source Sans Pro"; }
+    body .datepicker-container .datepicker-1 {
+      border-right: 1px dotted #BCBCBC; }
   body .selected-date {
     /*background: rgb(0, 113, 181, .8);*/
     padding: 20px;
@@ -203,7 +215,6 @@ body {
     background: #FFF;
     position: fixed;
     bottom: 50px;
-    right: 50px;
     border-radius: 0px;
     font-size: 14px;
     color: #999;
@@ -212,6 +223,10 @@ body {
       opacity: 1; }
     body .selected-date.hidden {
       opacity: 0; }
+    body .selected-date.datepicker-1-value {
+      left: 50px; }
+    body .selected-date.datepicker-2-value {
+      right: 50px; }
     body .selected-date h3 {
       color: #999;
       font-size: 16px;
