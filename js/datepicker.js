@@ -131,10 +131,14 @@ function fznDatePicker ($log, $document, $filter) {
 
     function link (scope, element, attrs, model) {
 
+        var monthOnly = attrs.monthOnly;
+
+        // Logic for body listerner function
         var bodyListenerLogic = function(e){
             var clickedElement = e.target;
             var insideDatepicker = false;
             do {
+                // if user clicks inside datepicker
                 if(clickedElement != document && (clickedElement.classList && (clickedElement.classList.contains('showPicker') || clickedElement.classList.contains('fzn-date-picker')))) {
                     insideDatepicker = true;
                     break;
@@ -146,10 +150,12 @@ function fznDatePicker ($log, $document, $filter) {
             }
         }
 
+        // function to register click handler for body
         var registerBodyListener = function(){
             document.body.addEventListener('click', bodyListenerLogic)
         };
 
+        // function to unregister click handler for body
         var unregisterBodyListener = function(){
             document.body.removeEventListener('click', bodyListenerLogic)
         }
@@ -514,11 +520,19 @@ function fznDatePicker ($log, $document, $filter) {
                             var year = parseInt(closestElemNg.text(), 10)||0;
                             scope.viewDate.setFullYear(year);
                         }
-                        scope.showMode(-1);
-                        scope.fill();
+                        if(monthOnly && !closestElemNg.hasClass('disabled') && closestElemNg.hasClass('month')){
+                            scope.showMode(-1);
+                            scope.fill();
+                            var temp = angular.element('.datepicker-days').find('table tbody td.day.picker').not('.old').not('.new').first()[0];
+                            scope.onclick(temp);
+                            scope.hide(true);
+                        }
+                        else{
+                            scope.showMode(-1);
+                            scope.fill();
+                        }
                     }
                     break;
-
                 case 'TD':
                     if (closestElemNg.hasClass('day') && !closestElemNg.hasClass('disabled')){
 
@@ -595,7 +609,10 @@ function fznDatePicker ($log, $document, $filter) {
 
             scope.update();
             scope.place();
-            scope.viewMode = 0;
+            if(monthOnly)
+                scope.viewMode = 1;
+            else
+                scope.viewMode = 0;
             scope.showPicker = true;
             $document.on('keydown',scope.keydown);
 
@@ -722,7 +739,8 @@ return {
           ngModel : '=',  // necessary to update internal from inside directive
           notAfter: '=',  // First acceptable date
           notBefore:'=',  // Last acceptable date
-          callback : '&'  // Callback to active when a date is selected
+          callback : '&',  // Callback to active when a date is selected
+          monthOnly : '@'
         },
         template: template, // html template is build from JS
         require: 'ngModel', // get access to external/internal representation

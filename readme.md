@@ -47,6 +47,7 @@ angular.module('myApp', ['date-picker']);
       today='true|text'                        // If true display 'today' in chosen language, if 'text' display text in todaybouton
       dayoff=[6,7]                             // Disable Saturday/Sunday for selection
       weeknum=true                             // Display week number
+      month-only                               // Allow user to pick months & years only
       autohide=  /></date-picker>
 
 ```

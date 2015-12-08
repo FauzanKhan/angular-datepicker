@@ -11,9 +11,20 @@
 		<h1>ngDatepick <br><small>An elegant, easily customizable datepicker in Angular <br>Built on top of <a href="https://github.com/fulup-bzh/DatePicker" target="_blank">Datepicker by Fulup</a></small></h1>
 	</header>
 	<div class="datepicker-container">
-		<date-picker ng-model="datepicker" placeholder="Select Date" callback="dateChange()" format="dd MMM, yyyy" autohide="true"></date-picker>
+		<div class="datepicker-1">
+			<label for="">Normal Datepicker</label>
+			<date-picker ng-model="datepicker" placeholder="Select Date" callback="dateChange()" format="dd MMM, yyyy" autohide="true"></date-picker>
+		</div>
+		<div class="datepicker-2">
+			<label for="">Month picker</label>
+			<date-picker ng-model="datepicker2" placeholder="Select Date" callback="dateChange()" format="MMM, yyyy" autohide="true" month-only="true"></date-picker>
+		</div>
 	</div>
-	<div class="selected-date" ng-class="datepicker ? 'vis' : 'hidden'">
+	<div class="selected-date datepicker-1-value" ng-class="datepicker ? 'vis' : 'hidden'">
+		<h3>Current Value</h3>
+		{{datepicker}}
+	</div>
+	<div class="selected-date datepicker-2-value" ng-class="datepicker2 ? 'vis' : 'hidden'">
 		<h3>Current Value</h3>
 		{{datepicker}}
 	</div>
