@@ -4,6 +4,7 @@ An elegant, easily customizable datepicker in Angular built on top of [Datepicke
 ### Description
 * An angular directive for datepicker.
 * Easily customizable, elegant design.
+* Works well with/without Foundation & Bootstrap.
 ![](http://s1.postimg.org/r4nc3gmhb/datepicker1.png)
 ![](http://s1.postimg.org/9dbpp072n/datepicker2.png)
 
