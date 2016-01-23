@@ -5,8 +5,8 @@ An elegant, easily customizable datepicker in Angular built on top of [Datepicke
 * An angular directive for datepicker.
 * Easily customizable, elegant design.
 * Works well with/without Foundation & Bootstrap.
-![](http://s1.postimg.org/r4nc3gmhb/datepicker1.png)
-![](http://s1.postimg.org/9dbpp072n/datepicker2.png)
+* ![](http://s1.postimg.org/r4nc3gmhb/datepicker1.png)
+* ![](http://s1.postimg.org/9dbpp072n/datepicker2.png)
 
 ### Dependecies
 * Angular.js
@@ -30,24 +30,24 @@ angular.module('myApp', ['date-picker']);
 
 ```html
 <date-picker
-      id="my-picker-name"                     // only use as an argument to callback
-      class="my-custom-class"                 // default class is bzm-date-picker
-      placeholder="Track Date Selection"      // place holder for date readonly input zone
+      id="my-picker-name"                         // only use as an argument to callback
+      class="my-custom-class"                   // default class is bzm-date-picker
+      placeholder="Track Date Selection"  // place holder for date readonly input zone
 
       // Angular Scope Variables
       callback="myCallBack"                    // $scope.myCallBack(selectedDate) is called when ever a new date is selected
-      ng-model="viewDate"                      // $scope.viewDate angular scope for selected date
-      not-after="myEndDate"                    // $scope.myEndDate   = JS Date OBJECT
-      not-before="myStartDate"                 // $scope.myStartDate = idem
+      ng-model="viewDate"                  // $scope.viewDate angular scope for selected date
+      not-after="myEndDate"              // $scope.myEndDate   = JS Date OBJECT
+      not-before="myStartDate"        // $scope.myStartDate = idem
 
       // Angular Directive Attributes
-      format="dd-MM-yy"                        // angular date filter https://docs.angularjs.org/api/ng/filter/date
+      format="dd-MM-yy"                      // angular date filter https://docs.angularjs.org/api/ng/filter/date
       language="en"                            // English, French, German, ...
       weekstart="1"                            // Week start [1==Monday]
       today='true|text'                        // If true display 'today' in chosen language, if 'text' display text in todaybouton
       dayoff=[6,7]                             // Disable Saturday/Sunday for selection
-      weeknum=true                             // Display week number
-      month-only                               // Allow user to pick months & years only
+      weeknum="true"                             // Display week number
+      month-only="true"                               // Allow user to pick months & years only
       autohide=  /></date-picker>
 
 ```
