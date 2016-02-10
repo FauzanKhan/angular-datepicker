@@ -6,7 +6,7 @@
     "FauzanKhan <fauzankhan93@gmail.com>"
   ],
   "description": "An elegant, easily customizable dropdown in Angular",
-  "main": "['js/datepicker.js', 'scss/datepicker.scss']",
+  "main": ["js/datepicker.js", "scss/datepicker.scss"],
   "moduleType": [
     "globals"
   ],
